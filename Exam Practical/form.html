@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">Add a Dish — Bloom Kitchen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page--form">
+
+<div class="blobs" aria-hidden="true">
+  <span class="blob blob--a"></span>
+  <span class="blob blob--b"></span>
+  <span class="blob blob--c"></span>
+</div>
+
+<header class="site-header">
+  <a href="index.html" class="brand">
+    <span class="brand__mark"><img src="images/fast-food.png" alt=""></span>
+    <span class="brand__text">
+      <span class="brand__name">Food Mania</span>
+      <span class="brand__tag">Delicious food, made daily</span>
+    </span>
+  </a>
+
+  <nav class="site-nav">
+    <a href="index.html" class="btn btn--ghost-header">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to menu
+    </a>
+  </nav>
+</header>
+
+<!-- ============ FORM ============ -->
+<main class="form-main">
+  <div class="form-card">
+    <div class="form-card__intro">
+      <span class="form-card__emoji" id="formEmoji">🥗</span>
+      <h1 class="form-card__title" id="formTitle">Add a new dish</h1>
+      <p class="form-card__sub" id="formSub">Tell us what's cooking — it'll show up on the menu instantly.</p>
+    </div>
+
+    <form id="productForm" novalidate>
+      <div class="field">
+        <label for="titleInput">Dish name</label>
+        <input type="text" id="titleInput" name="title" placeholder="e.g. Roasted Beet Salad" autocomplete="off">
+        <span class="field__error" id="titleError"></span>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="priceInput">Price</label>
+          <div class="field__prefixed">
+            <span class="field__prefix">$</span>
+            <input type="number" id="priceInput" name="price" placeholder="0.00" step="0.01" min="0" inputmode="decimal">
+          </div>
+          <span class="field__error" id="priceError"></span>
+        </div>
+
+        <div class="field">
+          <label for="categoryInput">Category</label>
+          <select id="categoryInput" name="category">
+            <option value="Starters">Starters</option>
+            <option value="Mains">Mains</option>
+            <option value="Salads">Salads</option>
+            <option value="Bakery">Bakery</option>
+            <option value="Desserts">Desserts</option>
+            <option value="Beverages">Beverages</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="imageInput">Image URL</label>
+        <input type="url" id="imageInput" name="image" placeholder="https://…" autocomplete="off">
+      </div>
+
+      <div class="field-preview" id="imagePreviewWrap" hidden>
+        <img id="imagePreview" alt="Dish preview">
+      </div>
+
+      <div class="form__actions">
+        <button type="submit" class="btn btn--primary btn--wide" id="submitBtn">Add to menu</button>
+        <a href="index.html" class="btn btn--ghost btn--wide" id="cancelBtn">Cancel</a>
+      </div>
+    </form>
+  </div>
+</main>
+
+<script src="js/storage.js"></script>
+<script src="js/form.js"></script>
+</body>
+</html>
